@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import {
   CaretSortIcon,
@@ -40,42 +42,60 @@ import {
 
 const data: Payment[] = [
   {
-    id: "m5gr84i9",
+    id: "1",
     amount: 316,
-    status: "success",
-    email: "ken99@yahoo.com",
+    priority: "fast-track",
+    task: "Choose kitchen colors",
   },
   {
-    id: "3u1reuv4",
+    id: "2",
     amount: 242,
-    status: "success",
-    email: "Abe45@gmail.com",
+    priority: "important",
+    task: "Finalize the budget",
   },
   {
-    id: "derv1ws0",
+    id: "3",
     amount: 837,
-    status: "processing",
-    email: "Monserrat44@gmail.com",
+    priority: "important",
+    task: "Reach out to contractors",
   },
   {
-    id: "5kma53ae",
+    id: "4",
     amount: 874,
-    status: "success",
-    email: "Silas22@gmail.com",
+    priority: "fast-track",
+    task: "Prepare schematic drawings",
   },
   {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@hotmail.com",
+    id: "5",
+    amount: 110,
+    priority: "pending",
+    task: "Order new electrical panel",
+  },
+  {
+    id: "6",
+    amount: 552,
+    priority: "pending",
+    task: "Research tiling",
+  },
+  {
+    id: "7",
+    amount: 803,
+    priority: "pending",
+    task: "Order materials",
+  },
+  {
+    id: "8",
+    amount: 120,
+    priority: "pending",
+    task: "Find new plumber",
   },
 ];
 
 export type Payment = {
   id: string;
   amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  priority: "pending" | "important" | "fast-track";
+  task: string;
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -102,26 +122,26 @@ export const columns: ColumnDef<Payment>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "priority",
+    header: "Priority",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="capitalize">{row.getValue("priority")}</div>
     ),
   },
   {
-    accessorKey: "email",
+    accessorKey: "task",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Task
           <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       );
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("task")}</div>,
   },
   {
     accessorKey: "amount",
@@ -157,11 +177,8 @@ export const columns: ColumnDef<Payment>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
-              Copy payment ID
+              Copy Task ID
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -169,7 +186,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-export function DataTableDemo() {
+export function DataPersonalProjects() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -201,10 +218,10 @@ export function DataTableDemo() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter tasks..."
+          value={(table.getColumn("task")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("task")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
@@ -288,25 +305,7 @@ export function DataTableDemo() {
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+          {table.getFilteredRowModel().rows.length} task(s) completed.
         </div>
       </div>
     </div>
