@@ -16,14 +16,32 @@ import { DataEverythingAll } from "./dataEverything";
 
 export function TabsPlaylist() {
   return (
-    <Tabs defaultValue="personal-projects" className="w-[600px]">
-      <TabsList className="grid w-full grid-cols-3 text-[#2590f2]">
-        <TabsTrigger value="teamwork">Teamwork</TabsTrigger>
-        <TabsTrigger value="personal-projects">Personal projects</TabsTrigger>
-        <TabsTrigger value="everything">Everything in between</TabsTrigger>
-      </TabsList>
+    <Tabs defaultValue="personal-projects" className="w-[800px]">
+      <Card className="border-2">
+        <TabsList className="grid w-full gap-3 grid-cols-3">
+          <TabsTrigger
+            className="border-solid hover:border-dotted border-2 border-[#2590f2] text-[#2590f2]"
+            value="teamwork"
+          >
+            Teamwork
+          </TabsTrigger>
+          <TabsTrigger
+            className="border-solid hover:border-dotted border-2 border-[#f84f39] text-[#f84f39]"
+            value="personal-projects"
+          >
+            Personal projects
+          </TabsTrigger>
+          <TabsTrigger
+            className="border-solid hover:border-dotted border-2 border-[#2a966f] text-[#2a966f]"
+            value="everything"
+          >
+            Everything in between
+          </TabsTrigger>
+        </TabsList>
+      </Card>
+
       <TabsContent value="teamwork">
-        <Card>
+        <Card className="border-2">
           <CardHeader>
             <CardTitle>App Launch</CardTitle>
             <CardDescription>
@@ -32,7 +50,7 @@ export function TabsPlaylist() {
               tasks.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-1">
+          <CardContent className="space-y-2">
             <div>
               <DataTeamwork></DataTeamwork>
             </div>
@@ -48,7 +66,7 @@ export function TabsPlaylist() {
               project. Excited that we're doing this. 💚
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-1">
+          <CardContent className="space-y-2">
             <div>
               <DataPersonalProjects></DataPersonalProjects>
             </div>
@@ -63,7 +81,7 @@ export function TabsPlaylist() {
               Working on self improvement and building good habits.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-1">
+          <CardContent className="space-y-2">
             <div>
               <DataEverythingAll></DataEverythingAll>
             </div>
