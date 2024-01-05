@@ -47,9 +47,9 @@ const CardComponent: React.FC<CardProps> = ({
           <p className="font-bold text-3xl text-center">{title3}</p>
         </div>
 
-        <div className="flex flex-col justify-center w-1/2 h-full relative mx-auto overflow-hidden rounded-[50px]">
+        <div className="flex flex-col justify-center w-1/2 h-full relative mx-auto overflow-hidden rounded-r-[50px]">
           <img
-            className="object-contain rounded-[50px]"
+            className="object-contain rounded-r-[50px]"
             src={src}
             alt={title1}
           />
