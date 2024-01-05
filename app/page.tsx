@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { TabsPlaylist } from "@/components/ui/tabview";
 import PitchDeck from "@/components/ui/pitchdeck";
+import Vid from "@/components/ui/vid";
 
 export default function Home() {
   return (
@@ -42,6 +43,10 @@ export default function Home() {
 
       <div className="relative flex w-full justify-center lg:static lg:h-auto lg:w-auto lg:bg-none p-10">
         <PitchDeck></PitchDeck>
+      </div>
+
+      <div className="relative flex w-full justify-center lg:static lg:h-auto lg:w-auto lg:bg-none p-20">
+        <Vid></Vid>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
