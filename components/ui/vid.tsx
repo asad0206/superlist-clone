@@ -18,7 +18,7 @@ const Vid = () => {
       >
         <div className="flex flex-col realtive mx-auto overflow-hidden justify-center rounded-2xl">
           <p className="font-bold text-[70px] text-center text-[#fff]">
-            You've never <br />
+            You`&apos;`ve never <br />
             worked <span className="text-[#f84f39]">this fast</span>
           </p>
 

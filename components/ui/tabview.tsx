@@ -45,9 +45,9 @@ export function TabsPlaylist() {
           <CardHeader>
             <CardTitle>App Launch</CardTitle>
             <CardDescription>
-              Hey team, here's a quick recap of what we're working on ahead of
-              the launch. Feel free to add any more notes or details to the
-              tasks.
+              Hey team, here`&apos;`s a quick recap of what we`&apos;`re working
+              on ahead of the launch. Feel free to add any more notes or details
+              to the tasks.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -62,8 +62,8 @@ export function TabsPlaylist() {
           <CardHeader>
             <CardTitle>Kitchen Reno</CardTitle>
             <CardDescription>
-              I'm putting this list together so we can get started organzing the
-              project. Excited that we're doing this. 💚
+              I`&apos;`m putting this list together so we can get started
+              organzing the project. Excited that we`&apos;`re doing this. 💚
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
