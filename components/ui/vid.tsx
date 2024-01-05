@@ -13,7 +13,7 @@ const Vid = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <Card
-        className="flex flex-col border-2 rounded-[50px] shadow-lg hover:shadow-2xl px-24 pb-8 w-full h-max mx-10 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        className="flex flex-col border-2 rounded-[50px] shadow-xl shadow-black hover:shadow-orange-700 px-24 pb-8 w-full h-max mx-10 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         style={{ backgroundColor: "#181824" }}
       >
         <div className="flex flex-col realtive mx-auto overflow-hidden justify-center rounded-2xl">
