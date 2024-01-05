@@ -48,11 +48,11 @@ export default function Home() {
         <PitchDeck></PitchDeck>
       </div>
 
-      <div className="relative flex w-full justify-center lg:static lg:h-auto lg:w-auto lg:bg-none p-20">
+      <div className="relative flex w-screen justify-center lg:static lg:h-auto lg:w-auto lg:bg-none p-20">
         <Vid></Vid>
       </div>
 
-      <div className="relative flex w-full lg:static lg:h-auto lg:w-auto lg:bg-none">
+      <div className="relative flex w-full hover:w-screen lg:static lg:h-auto lg:w-auto lg:bg-none">
         <ListStructure></ListStructure>
       </div>
       <div className="relative flex w-full lg:static lg:h-auto lg:w-auto lg:bg-none">
