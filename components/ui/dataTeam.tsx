@@ -39,7 +39,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { id } from "vuetify/lib/locale/index.js";
 
 const data: Payment[] = [
   {
